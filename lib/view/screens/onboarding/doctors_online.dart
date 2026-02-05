@@ -1,6 +1,9 @@
 import 'package:docotor_appointment_app/config/const/common_online_doctors.dart';
 import 'package:docotor_appointment_app/config/const/custom_elevated_button.dart';
 import 'package:docotor_appointment_app/config/styles/colors.dart';
+import 'package:docotor_appointment_app/config/styles/styles.dart';
+import 'package:docotor_appointment_app/view/screens/onboarding/splash_screens.dart';
+import 'package:docotor_appointment_app/view/widgets/login_page/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
@@ -31,8 +34,7 @@ class _DoctorsOnlineState extends State<DoctorsOnline> {
     {
       "image": "assets/images/doc3.png",
       "title": "Trusted Healthcare",
-      "desc":
-          "Your health matters. Consult trusted professionals from home",
+      "desc": "Your health matters. Consult trusted professionals from home",
     },
   ];
 
@@ -46,72 +48,89 @@ class _DoctorsOnlineState extends State<DoctorsOnline> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            Expanded(
-              child: PageView.builder(
-                controller: pageController,
-                itemCount: pages.length,
-                onPageChanged: (index) {
-                  setState(() {
-                    selectedPage = index;
-                  });
-                },
-                itemBuilder: (context, index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 420,
-                        width: double.infinity,
-                        child: Image.asset(
-                          pages[index]["image"]!,
-                          fit: BoxFit.cover,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 522,
+                child: PageView.builder(
+                  controller: pageController,
+                  itemCount: pages.length,
+                  onPageChanged: (index) {
+                    setState(() {
+                      selectedPage = index;
+                    });
+                  },
+                  itemBuilder: (context, index) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 420,
+                          width: double.infinity,
+                          child: Image.asset(
+                            pages[index]["image"]!,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
 
-                      const SizedBox(height: 28),
+                        const SizedBox(height: 28),
 
-                      Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 38.0),
-                        child: CommonOnlineDoctors(
-                          title: pages[index]["title"]!,
-                          description: pages[index]["desc"]!,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 38.0),
+                          child: CommonOnlineDoctors(
+                            title: pages[index]["title"]!,
+                            description: pages[index]["desc"]!,
+                          ),
                         ),
+                      ],
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(height: 24),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 38.0),
+                child: Column(
+                  children: [
+                    CustomElevatedButton(text: "Next", onPressed: () {}),
+                    const SizedBox(height: 24),
+                    PageViewDotIndicator(
+                      currentItem: selectedPage,
+                      count: pages.length,
+                      unselectedColor: AppColors.grey300,
+                      selectedColor: AppColors.grey700,
+                    ),
+
+                    const SizedBox(height: 24),
+
+                    InkWell(
+                      onTap: () {
+                        if (selectedPage < pages.length - 1) {
+                          pageController.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        } else if (selectedPage == 2) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(),
+                            ),
+                          );
+                        }
+                      },
+                      child: Text(
+                        "Skip",
+                        style: Styles.fontNormal(AppColors.grey500),
                       ),
-                    ],
-                  );
-                },
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 38.0),
-              child: Column(
-                children: [
-                  CustomElevatedButton(
-                    text: "Next",
-                    onPressed: () {
-                      if (selectedPage < pages.length - 1) {
-                        pageController.nextPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOut,
-                        );
-                      }
-                    },
-                  ),
-                  const SizedBox(height: 24),
-                  PageViewDotIndicator(
-                    currentItem: selectedPage,
-                    count: pages.length,
-                    unselectedColor: AppColors.grey300,
-                    selectedColor: AppColors.grey700,
-                  ),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
