@@ -3,7 +3,7 @@ import 'package:docotor_appointment_app/config/const/custom_elevated_button.dart
 import 'package:docotor_appointment_app/config/styles/colors.dart';
 import 'package:docotor_appointment_app/config/styles/styles.dart';
 import 'package:docotor_appointment_app/view/screens/onboarding/splash_screens.dart';
-import 'package:docotor_appointment_app/view/widgets/login_page/login_page.dart';
+import 'package:docotor_appointment_app/view/screens/login_page/create_account.dart';
 import 'package:flutter/material.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
@@ -94,7 +94,7 @@ class _DoctorsOnlineState extends State<DoctorsOnline> {
                 padding: const EdgeInsets.symmetric(horizontal: 38.0),
                 child: Column(
                   children: [
-                    CustomElevatedButton(text: "Next", onPressed: () {}),
+                    CustomElevatedButton(text: "Next", onPressed: () {},),
                     const SizedBox(height: 24),
                     PageViewDotIndicator(
                       currentItem: selectedPage,
@@ -116,7 +116,7 @@ class _DoctorsOnlineState extends State<DoctorsOnline> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginPage(),
+                              builder: (context) => CreateAccount(),
                             ),
                           );
                         }
