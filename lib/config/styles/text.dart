@@ -10,7 +10,11 @@ class Strings {
   static const String google = "Continue With Google";
   static const String facebook = "Continue With Facebook";
   static const String anAccount = "Do you Have an account ? ";
+    static const String doNotAccount = "Do not Have an account ? ";
+
   static const String signIn = "Sign In";
+    static const String signUp = "Sign Up";
+
   static const String sendCode = "Send Code";
 
   static const String fillProfile = "Fill Your Profile";
@@ -32,6 +36,10 @@ class Strings {
   static const String resend = "Resned";
     static const String confirmPassword = "Confirm Password";
         static const String resetPassword = "Reset Password";
+                static const String welcome = "Hi, Welcome Back!";
+                static const String hope = "Hope you are doing well";
+
+
 
 
 }
