@@ -4,6 +4,7 @@ import 'package:docotor_appointment_app/config/const/doctor_card.dart';
 import 'package:docotor_appointment_app/config/styles/colors.dart';
 import 'package:docotor_appointment_app/config/styles/styles.dart';
 import 'package:docotor_appointment_app/config/styles/text.dart';
+import 'package:docotor_appointment_app/view/screens/doctor_appointment_booking/doctor_details.dart';
 import 'package:docotor_appointment_app/view/screens/home_action/doctor_category_list.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +51,7 @@ ListView.builder(
     padding: const EdgeInsets.only(bottom:  8.0),
     child: DoctorCard(
       onTap: () {
-        
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorDetailspage()));
       },
             name: "Dr. David Patel",
             specialty: "Cardiologist",

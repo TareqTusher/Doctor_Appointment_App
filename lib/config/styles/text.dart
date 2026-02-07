@@ -48,5 +48,6 @@ class Strings {
   static const String seeAll = 'See All';
   static const String nearByMedicalCenter = 'Near by Medical center';
     static const String allDoctors = 'All Doctors';
+    static const String doctorDetails = 'Doctor Details';
 
 }
