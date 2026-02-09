@@ -21,7 +21,7 @@ class HeadersSection extends StatelessWidget {
                       SizedBox(width: 4),
                       Text(
                         "Seattle,USA",
-                        style: Styles.fontSemiMedium(AppColors.grey700),
+                        style: Styles.fontSemiBold(AppColors.grey700),
                       ),
                       SizedBox(width: 8),
                       InkWell(

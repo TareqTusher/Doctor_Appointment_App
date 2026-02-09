@@ -31,7 +31,12 @@ class DoctorDetailspage extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24.0),
-            child: Icon(Icons.favorite_outline, color: AppColors.grey800),
+            child: InkWell(
+              
+              onTap: (){
+                router.push(AppRoutesPath.favorites);
+              },
+              child: Icon(Icons.favorite_outline, color: AppColors.grey800)),
           ),
         ],
       ),

@@ -33,8 +33,8 @@ class _MyBookingsPageState extends State<MyBookingsPage> {
               });
             },
 
-            labelStyle: Styles.fontSemiMedium(AppColors.darkTeal),
-            unselectedLabelStyle: Styles.fontSemiMedium(AppColors.grey400),
+            labelStyle: Styles.fontSemiBold(AppColors.darkTeal),
+            unselectedLabelStyle: Styles.fontSemiBold(AppColors.grey400),
             labelColor: AppColors.darkTeal,
             unselectedLabelColor: AppColors.grey400,
             indicatorColor: AppColors.darkTeal,

@@ -11,14 +11,13 @@ import 'package:docotor_appointment_app/view/widgets/login_page/show_dialog_widg
 import 'package:flutter/material.dart';
 
 class BookAppointmentPage extends StatefulWidget {
-  const BookAppointmentPage({super.key,  this.doctorName});
-final String? doctorName; 
+  const BookAppointmentPage({super.key, this.doctorName});
+  final String? doctorName;
   @override
   State<BookAppointmentPage> createState() => _BookAppointmentPageState();
 }
 
 class _BookAppointmentPageState extends State<BookAppointmentPage> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -42,17 +41,17 @@ class _BookAppointmentPageState extends State<BookAppointmentPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CommonTitle(text: Strings.selectDate),
-        
+
               const SizedBox(height: 16),
-        
+
               SelectDateSection(),
-        
+
               const SizedBox(height: 16),
-        
+
               CommonTitle(text: Strings.selectHour),
-        
+
               const SizedBox(height: 16),
-        
+
               SelectHourSection(),
             ],
           ),
@@ -60,18 +59,21 @@ class _BookAppointmentPageState extends State<BookAppointmentPage> {
         bottomSheet: Container(
           padding: EdgeInsets.all(24),
           color: AppColors.white,
-          child: CustomElevatedButton(text: Strings.confirm, onPressed: (){
-
-
-             showDialog(
-                      context: context,
-                      builder: (context) {
-                        return DialogWidget(
-                          bottomText: Strings.endAppointment, description: "Your Appointment with Dr. David is confirmed for June 30,2025 at 10:00PM",
-                        );
-                      },
-                    );
-          }),
+          child: CustomElevatedButton(
+            text: Strings.confirm,
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return DialogWidget(
+                    bottomText: Strings.endAppointment,
+                    description:
+                        "Your Appointment with Dr. David is confirmed for June 30,2025 at 10:00PM",
+                  );
+                },
+              );
+            },
+          ),
         ),
       ),
     );
