@@ -21,7 +21,7 @@ final String label;
   
         Text(
           value,
-          style:Styles.fontSemiBold(AppColors.grey600),
+          style:Styles.font16SemiBold(AppColors.grey600),
         ),
     
         Text(

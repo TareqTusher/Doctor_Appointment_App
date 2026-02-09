@@ -32,7 +32,7 @@ class FavoritesPage extends StatelessWidget {
           backgroundColor: AppColors.white,
           title: Text(
             Strings.favorites,
-            style: Styles.fontSemiBold(AppColors.grey700),
+            style: Styles.font16SemiBold(AppColors.grey700),
           ),
 
           bottom: TabBar(
@@ -40,8 +40,8 @@ class FavoritesPage extends StatelessWidget {
             dividerHeight: 1,
             labelColor: AppColors.darkTeal,
             indicatorColor: AppColors.darkTeal,
-            labelStyle: Styles.fontSemiBold(AppColors.darkTeal),
-            unselectedLabelStyle: Styles.fontSemiBold(AppColors.grey400),
+            labelStyle: Styles.font16SemiBold(AppColors.darkTeal),
+            unselectedLabelStyle: Styles.font16SemiBold(AppColors.grey400),
             tabs: [
               Tab(text: Strings.doctor),
               Tab(text: Strings.hospital),

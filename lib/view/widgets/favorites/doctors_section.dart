@@ -1,3 +1,4 @@
+import 'package:docotor_appointment_app/config/const/common_row_elevated_button.dart';
 import 'package:docotor_appointment_app/config/const/doctor_card.dart';
 import 'package:docotor_appointment_app/config/router/app_routes.dart';
 import 'package:docotor_appointment_app/config/router/router.dart';
@@ -64,48 +65,9 @@ class DoctorsSection extends StatelessWidget {
                               icons: Icons.star,
                             ),
                             SizedBox(height: 24),
-
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: AppColors.grey200,
-
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                      ),
-                                    ),
-                                    onPressed: () => Navigator.pop(context),
-                                    child: Text(
-                                      Strings.cancel,
-                                      style: Styles.smallTextBold(
-                                        AppColors.darkTeal,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(width: 10),
-                                Expanded(
-                                  child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: AppColors.darkTeal,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text(
-                                      Strings.remove,
-                                      style: Styles.smallTextBold(
-                                        AppColors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                            CommonRowElevatedButton(
+                              leftBtnText: Strings.cancel,
+                              rightBtnText: Strings.remove,
                             ),
                           ],
                         ),

@@ -54,7 +54,7 @@ class _SelectHourSectionState extends State<SelectHourSection> {
                       ),
                       child: Text(
                         time,
-                        style: Styles.fontSemiBold(isSelected?AppColors.white: AppColors.grey500),
+                        style: Styles.font16SemiBold(isSelected?AppColors.white: AppColors.grey500),
                       ),
                     ),
                   );

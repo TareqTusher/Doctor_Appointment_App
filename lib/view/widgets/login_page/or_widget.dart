@@ -16,7 +16,7 @@ class OrWidget extends StatelessWidget {
                       SizedBox(width: 24),
                       Text(
                         Strings.or,
-                        style: Styles.fontMedium(AppColors.grey500),
+                        style: Styles.font16Medium(AppColors.grey500),
                       ),
                       SizedBox(width: 24),
                       Expanded(
