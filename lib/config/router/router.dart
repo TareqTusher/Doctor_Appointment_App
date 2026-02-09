@@ -10,6 +10,8 @@ import 'package:docotor_appointment_app/view/screens/login_page/login_page.dart'
 import 'package:docotor_appointment_app/view/screens/login_page/verify_email_page.dart';
 import 'package:docotor_appointment_app/view/screens/onboarding/doctors_online.dart';
 import 'package:docotor_appointment_app/view/screens/onboarding/splash_screens.dart';
+import 'package:docotor_appointment_app/view/screens/profile/notification_page.dart';
+import 'package:docotor_appointment_app/view/screens/profile/profile_page.dart';
 import 'package:docotor_appointment_app/view/widgets/login_page/set_new_password.dart';
 import 'package:go_router/go_router.dart';
 
@@ -28,45 +30,37 @@ GoRouter router = GoRouter(
       pageBuilder: (context, state) => NoTransitionPage(child: HomePage()),
     ),
 
-       GoRoute(
+    GoRoute(
       path: AppRoutesPath.allDocotor,
 
       name: AppRoutesName.allDocotor,
-      pageBuilder: (context, state) => NoTransitionPage(child: AllDoctorsPage()),
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: AllDoctorsPage()),
     ),
 
-       GoRoute(
+    GoRoute(
       path: AppRoutesPath.doctorDetails,
 
       name: AppRoutesName.doctorDetails,
-      pageBuilder: (context, state) => NoTransitionPage(child: DoctorDetailspage()),
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: DoctorDetailspage()),
     ),
 
-        GoRoute(
+    GoRoute(
       path: AppRoutesPath.bookAppointMent,
 
       name: AppRoutesName.bookAppointMent,
       pageBuilder: (context, state) {
-
-   
-
-    return NoTransitionPage(
-      child: BookAppointmentPage(
-      ),
-    );
-
-      } 
-          
-
-      
+        return NoTransitionPage(child: BookAppointmentPage());
+      },
     ),
-       GoRoute(
+    GoRoute(
       path: AppRoutesPath.doctorsOnline,
 
       name: AppRoutesName.doctorsOnline,
       pageBuilder: (context, state) => NoTransitionPage(child: DoctorsOnline()),
     ),
-      GoRoute(
+    GoRoute(
       path: AppRoutesPath.createAccount,
 
       name: AppRoutesName.createAccount,
@@ -78,29 +72,46 @@ GoRouter router = GoRouter(
       name: AppRoutesName.loginPage,
       pageBuilder: (context, state) => NoTransitionPage(child: LoginPage()),
     ),
-      GoRoute(
+    GoRoute(
       path: AppRoutesPath.setNewPassword,
 
       name: AppRoutesName.setNewPassword,
-      pageBuilder: (context, state) => NoTransitionPage(child: SetNewPassword()),
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: SetNewPassword()),
     ),
-     GoRoute(
+    GoRoute(
       path: AppRoutesPath.forgotPassword,
 
       name: AppRoutesName.forgotPassword,
-      pageBuilder: (context, state) => NoTransitionPage(child: ForgotPassword()),
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: ForgotPassword()),
     ),
-      GoRoute(
+    GoRoute(
       path: AppRoutesPath.verifyEmailPage,
 
       name: AppRoutesName.verifyEmailPage,
-      pageBuilder: (context, state) => NoTransitionPage(child: VerifyEmailPage()),
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: VerifyEmailPage()),
     ),
-      GoRoute(
+    GoRoute(
       path: AppRoutesPath.favorites,
 
       name: AppRoutesName.favorites,
       pageBuilder: (context, state) => NoTransitionPage(child: FavoritesPage()),
+    ),
+    GoRoute(
+      path: AppRoutesPath.notification,
+
+      name: AppRoutesName.notification,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: NotificationPage()),
+    ),
+     GoRoute(
+      path: AppRoutesPath.profilePage,
+
+      name: AppRoutesName.profilePage,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: ProfilePage()),
     ),
   ],
 );

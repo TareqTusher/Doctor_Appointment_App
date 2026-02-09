@@ -63,7 +63,7 @@ class CommonDoctorCardSchedule extends StatelessWidget {
                       SizedBox(height: 12),
                       Text(
                         designation,
-                        style: Styles.fontSemiBold(AppColors.grey600),
+                        style: Styles.font16SemiBold(AppColors.grey600),
                       ),
 
                       Row(

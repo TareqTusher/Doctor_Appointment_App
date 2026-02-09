@@ -74,4 +74,19 @@ static const String completed="Completed";
 static const String cancelled="Cancelled";
 static const String removeFavorites="Remove from Favorites?";
 static const String remove="Yes, Remove";
+static const String profile="Profile";
+static const String editProfile="Edit Profile";
+static const String favorite="Favorite";
+static const String notifications="Notifications";
+static const String settings="Settings";
+static const String help="Help and Support";
+static const String condtions="Terms and Conditions";
+static const String logout="Log Out";
+static const String wantLogout="Are you sure you want to Logout";
+
+static const String yesLogout="Yes,Logout";
+static const String today="Today";
+static const String markAll="Mark all as read";
+static const String yesterday="Yesterday";
+
 }
