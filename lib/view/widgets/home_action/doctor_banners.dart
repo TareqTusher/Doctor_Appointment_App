@@ -4,14 +4,9 @@ import 'package:docotor_appointment_app/config/styles/text.dart';
 import 'package:flutter/material.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
-class DoctorBanners extends StatefulWidget {
-  const DoctorBanners({super.key});
-
-  @override
-  State<DoctorBanners> createState() => _DoctorBannersState();
-}
-
-class _DoctorBannersState extends State<DoctorBanners> {
+// ignore: must_be_immutable
+class DoctorBanners extends StatelessWidget {
+   DoctorBanners({super.key});
 
     int selectedPage = 0;
 
@@ -34,6 +29,7 @@ class _DoctorBannersState extends State<DoctorBanners> {
       "desc": "Your health matters. Consult trusted professionals from home",
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return      Stack(

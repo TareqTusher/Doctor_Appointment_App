@@ -1,13 +1,14 @@
 import 'package:docotor_appointment_app/config/router/app_routes.dart';
+import 'package:docotor_appointment_app/view/screens/create_account/fill_profile.dart';
 import 'package:docotor_appointment_app/view/screens/doctor_appointment_booking/book_appointment.dart';
 import 'package:docotor_appointment_app/view/screens/doctor_appointment_booking/doctor_details.dart';
 import 'package:docotor_appointment_app/view/screens/favorites/favorites_page.dart';
 import 'package:docotor_appointment_app/view/screens/home_action/all_doctors_page.dart';
 import 'package:docotor_appointment_app/view/screens/home_action/home_page.dart';
-import 'package:docotor_appointment_app/view/screens/login_page/create_account.dart';
-import 'package:docotor_appointment_app/view/screens/login_page/forgot_password.dart';
-import 'package:docotor_appointment_app/view/screens/login_page/login_page.dart';
-import 'package:docotor_appointment_app/view/screens/login_page/verify_email_page.dart';
+import 'package:docotor_appointment_app/view/screens/create_account/create_account.dart';
+import 'package:docotor_appointment_app/view/screens/create_account/forgot_password.dart';
+import 'package:docotor_appointment_app/view/screens/create_account/login_page.dart';
+import 'package:docotor_appointment_app/view/screens/create_account/verify_email_page.dart';
 import 'package:docotor_appointment_app/view/screens/onboarding/doctors_online.dart';
 import 'package:docotor_appointment_app/view/screens/onboarding/splash_screens.dart';
 import 'package:docotor_appointment_app/view/screens/profile/notification_page.dart';
@@ -112,6 +113,13 @@ GoRouter router = GoRouter(
       name: AppRoutesName.profilePage,
       pageBuilder: (context, state) =>
           NoTransitionPage(child: ProfilePage()),
+    ),
+     GoRoute(
+      path: AppRoutesPath.fillProfile,
+
+      name: AppRoutesName.fillProfile,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: FillProfilePage()),
     ),
   ],
 );

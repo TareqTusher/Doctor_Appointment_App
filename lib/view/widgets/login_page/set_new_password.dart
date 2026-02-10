@@ -2,11 +2,7 @@ import 'package:docotor_appointment_app/config/const/common_headers.dart';
 import 'package:docotor_appointment_app/config/const/common_text_filled.dart';
 import 'package:docotor_appointment_app/config/const/custom_elevated_button.dart';
 import 'package:docotor_appointment_app/config/styles/colors.dart';
-import 'package:docotor_appointment_app/config/styles/styles.dart';
 import 'package:docotor_appointment_app/config/styles/text.dart';
-import 'package:docotor_appointment_app/view/screens/login_page/forgot_password.dart';
-import 'package:docotor_appointment_app/view/widgets/login_page/or_widget.dart';
-import 'package:docotor_appointment_app/view/widgets/login_page/social_media_filled_widget.dart';
 import 'package:flutter/material.dart';
 
 class SetNewPassword extends StatelessWidget {

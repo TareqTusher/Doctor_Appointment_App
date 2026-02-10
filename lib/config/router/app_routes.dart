@@ -13,6 +13,8 @@ static const verifyEmailPage="/verifyEmailPage";
 static const favorites="/favorites";
 static const notification="/notification";
 static const profilePage="/profilePage";
+static const fillProfile="/fillProfile";
+
 
 }
 
@@ -31,5 +33,6 @@ static const verifyEmailPage="verifyEmailPage";
 static const favorites="favorites";
 static const notification="notification";
 static const profilePage="profilePage";
+static const fillProfile="fillProfile";
 
 }

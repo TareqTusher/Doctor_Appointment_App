@@ -8,15 +8,12 @@ import 'package:docotor_appointment_app/view/widgets/login_page/sign_in_widget.d
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class VerifyEmailPage extends StatefulWidget {
-  const VerifyEmailPage({super.key});
+// ignore: must_be_immutable
+class VerifyEmailPage extends StatelessWidget {
+   VerifyEmailPage({super.key});
 
-  @override
-  State<VerifyEmailPage> createState() => _VerifyEmailPageState();
-}
-
-class _VerifyEmailPageState extends State<VerifyEmailPage> {
   String? currentText;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

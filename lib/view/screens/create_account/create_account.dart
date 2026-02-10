@@ -51,7 +51,10 @@ class CreateAccount extends StatelessWidget {
                     bottomheight: 12,
                     topHeight: 12,
                     text: Strings.createAccount,
-                    onPressed: () {},
+                    onPressed: () {
+
+                      router.push(AppRoutesPath.fillProfile);
+                    },
                   ),
                   SizedBox(height: 24),
                   OrWidget(),

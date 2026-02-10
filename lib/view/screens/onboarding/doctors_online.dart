@@ -4,19 +4,14 @@ import 'package:docotor_appointment_app/config/router/app_routes.dart';
 import 'package:docotor_appointment_app/config/router/router.dart';
 import 'package:docotor_appointment_app/config/styles/colors.dart';
 import 'package:docotor_appointment_app/config/styles/styles.dart';
+import 'package:docotor_appointment_app/controller/onboarding/doctors_online_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
-class DoctorsOnline extends StatefulWidget {
-  const DoctorsOnline({super.key});
-
-  @override
-  State<DoctorsOnline> createState() => _DoctorsOnlineState();
-}
-
-class _DoctorsOnlineState extends State<DoctorsOnline> {
-  final PageController pageController = PageController();
-  int selectedPage = 0;
+// ignore: must_be_immutable
+class DoctorsOnline extends ConsumerWidget {
+  DoctorsOnline({super.key});
 
   final List<Map<String, String>> pages = [
     {
@@ -38,14 +33,13 @@ class _DoctorsOnlineState extends State<DoctorsOnline> {
     },
   ];
 
+  // @override
   @override
-  void dispose() {
-    pageController.dispose();
-    super.dispose();
-  }
+  Widget build(BuildContext context, WidgetRef ref) {
+    final notifier = ref.read(doctorOnlineProvider.notifier);
+    final state = ref.watch(doctorOnlineProvider);
+    final currentIndex = state.selectedIndex ?? 0;
 
-  @override
-  Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -54,12 +48,10 @@ class _DoctorsOnlineState extends State<DoctorsOnline> {
               SizedBox(
                 height: 522,
                 child: PageView.builder(
-                  controller: pageController,
+                  controller: notifier.pageController,
                   itemCount: pages.length,
                   onPageChanged: (index) {
-                    setState(() {
-                      selectedPage = index;
-                    });
+                    notifier.setIndex(index);
                   },
                   itemBuilder: (context, index) {
                     return Column(
@@ -94,10 +86,10 @@ class _DoctorsOnlineState extends State<DoctorsOnline> {
                 padding: const EdgeInsets.symmetric(horizontal: 38.0),
                 child: Column(
                   children: [
-                    CustomElevatedButton(text: "Next", onPressed: () {},),
+                    CustomElevatedButton(text: "Next", onPressed: () {}),
                     const SizedBox(height: 24),
                     PageViewDotIndicator(
-                      currentItem: selectedPage,
+                      currentItem: currentIndex,
                       count: pages.length,
                       unselectedColor: AppColors.grey300,
                       selectedColor: AppColors.grey700,
@@ -107,12 +99,12 @@ class _DoctorsOnlineState extends State<DoctorsOnline> {
 
                     InkWell(
                       onTap: () {
-                        if (selectedPage < pages.length - 1) {
-                          pageController.nextPage(
+                        if (currentIndex < pages.length - 1) {
+                          notifier.pageController.nextPage(
                             duration: const Duration(milliseconds: 300),
                             curve: Curves.easeInOut,
                           );
-                        } else if (selectedPage == 2) {
+                        } else if (currentIndex == 2) {
                           router.push(AppRoutesPath.createAccount);
                         }
                       },
