@@ -9,14 +9,9 @@ import 'package:docotor_appointment_app/view/widgets/login_page/gender_select_wi
 import 'package:docotor_appointment_app/view/widgets/login_page/show_dialog_widget.dart';
 import 'package:flutter/material.dart';
 
-class FillProfilePage extends StatefulWidget {
+class FillProfilePage extends StatelessWidget {
   const FillProfilePage({super.key});
 
-  @override
-  State<FillProfilePage> createState() => _FillProfilePageState();
-}
-
-class _FillProfilePageState extends State<FillProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,10 +80,11 @@ class _FillProfilePageState extends State<FillProfilePage> {
                 SizedBox(height: 20),
                 CommonTextFilled(hintText: 'name@example.com'),
                 SizedBox(height: 20),
-                CommonTextFilled(
-                  hintText: 'date of Birth',
-                  icon: Icons.calendar_month,
-                ),
+                // CommonTextFilled(
+                //   hintText: 'Date of Birth',
+                //   icon: Icons.calendar_month,
+                // ),
+                CommonTextFilled1(),
                 SizedBox(height: 20),
                 GenderSelectWidget(),
 

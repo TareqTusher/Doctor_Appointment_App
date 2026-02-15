@@ -11,7 +11,6 @@ class GenderSelectWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context,WidgetRef ref) {
-    final notifier=ref.read(signUpProvider.notifier);
     final state=ref.watch(signUpProvider);
     return DropdownButtonFormField(
       decoration: InputDecoration(
@@ -40,7 +39,6 @@ class GenderSelectWidget extends ConsumerWidget {
       ],
       onChanged: (val) {
         
-        /// notifier.selectGender("gender");
         selectedGender=val;
         
       },

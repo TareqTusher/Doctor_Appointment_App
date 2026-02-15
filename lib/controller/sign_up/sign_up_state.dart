@@ -1,9 +1,11 @@
 class SignUpState {
 
 String?selectGender;
-SignUpState({this.selectGender});
-SignUpState copyWith({String?selectedGender}){
-  return SignUpState(selectGender: selectedGender??this.selectGender);
+DateTime?dateTime;
+
+SignUpState({this.selectGender,this.dateTime});
+SignUpState copyWith({String?selectedGender,DateTime?dateTime}){
+  return SignUpState(selectGender: selectedGender??selectGender,dateTime: dateTime??dateTime);
 }
 
 }

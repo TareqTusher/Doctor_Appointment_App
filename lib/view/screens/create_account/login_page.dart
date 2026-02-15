@@ -6,7 +6,6 @@ import 'package:docotor_appointment_app/config/router/router.dart';
 import 'package:docotor_appointment_app/config/styles/colors.dart';
 import 'package:docotor_appointment_app/config/styles/styles.dart';
 import 'package:docotor_appointment_app/config/styles/text.dart';
-import 'package:docotor_appointment_app/view/screens/create_account/forgot_password.dart';
 import 'package:docotor_appointment_app/view/widgets/login_page/or_widget.dart';
 import 'package:docotor_appointment_app/view/widgets/login_page/sign_in_widget.dart';
 import 'package:docotor_appointment_app/view/widgets/login_page/social_media_filled_widget.dart';
