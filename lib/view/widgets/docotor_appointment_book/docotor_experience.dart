@@ -10,25 +10,26 @@ final String label;
   @override
   Widget build(BuildContext context) {
       return Column(
-      children: [
-        Container(
-          height: 48,
-          decoration: BoxDecoration(
-            color: AppColors.grey200,
-            shape: BoxShape.circle
+        children: [
+          Container(
+         
+            height: 56,
+            width: 56,
+            decoration: BoxDecoration(
+              color: AppColors.grey100,
+              shape: BoxShape.circle
+            ),
+            child: Center(child: Icon(icon, size: 30, color: AppColors.darkTeal)),
           ),
-          child: Icon(icon, size: 30, color: AppColors.darkTeal)),
-  
-        Text(
-          value,
-          style:Styles.font16SemiBold(AppColors.grey600),
-        ),
-    
-        Text(
-          label,
-           style:Styles.fontNormal(AppColors.grey500),
-        ),
-      ],
-    );
+           Text(
+                value,
+                style:Styles.font16SemiBold(AppColors.grey600),
+              ),
+           Text(
+                label,
+                 style:Styles.fontNormal(AppColors.grey500),
+              ),
+        ],
+      );
   }
 }

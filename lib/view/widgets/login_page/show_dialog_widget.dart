@@ -77,7 +77,10 @@ final String description;
                       children: [
                         CustomElevatedButton(
                           text: Strings.done,
-                          onPressed: () {},
+                          onPressed: () {
+
+                            Navigator.pop(context);
+                          },
                         ),
                         SizedBox(height: 12),
                         Text(bottomText ?? "",style: Styles.fontNormal(AppColors.grey500),),
