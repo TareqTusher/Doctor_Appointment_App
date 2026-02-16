@@ -5,21 +5,21 @@ import 'package:docotor_appointment_app/config/router/router.dart';
 import 'package:docotor_appointment_app/config/styles/colors.dart';
 import 'package:docotor_appointment_app/config/styles/styles.dart';
 import 'package:docotor_appointment_app/config/styles/text.dart';
+import 'package:docotor_appointment_app/controller/doctor_appointment/doctor_appointment_notifier.dart';
 import 'package:docotor_appointment_app/view/widgets/docotor_appointment_book/select_date_section.dart';
 import 'package:docotor_appointment_app/view/widgets/docotor_appointment_book/select_hour_section.dart';
 import 'package:docotor_appointment_app/view/widgets/login_page/show_dialog_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
-class BookAppointmentPage extends StatefulWidget {
-  const BookAppointmentPage({super.key, this.doctorName});
-  final String? doctorName;
-  @override
-  State<BookAppointmentPage> createState() => _BookAppointmentPageState();
-}
+class BookAppointmentPage extends ConsumerWidget {
+  const BookAppointmentPage({super.key});
 
-class _BookAppointmentPageState extends State<BookAppointmentPage> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(doctorAppointmentProvider);
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.white,
@@ -41,17 +41,11 @@ class _BookAppointmentPageState extends State<BookAppointmentPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CommonTitle(text: Strings.selectDate),
-
               const SizedBox(height: 16),
-
               SelectDateSection(),
-
               const SizedBox(height: 16),
-
               CommonTitle(text: Strings.selectHour),
-
               const SizedBox(height: 16),
-
               SelectHourSection(),
             ],
           ),
@@ -62,13 +56,19 @@ class _BookAppointmentPageState extends State<BookAppointmentPage> {
           child: CustomElevatedButton(
             text: Strings.confirm,
             onPressed: () {
+              final doctorName = state.doctorName ?? "Doctor";
+              final selectedTime = state.selectedTime ?? "N/A";
+              final selectedDate = state.selectedDay != null
+                  ? DateFormat('MMMM dd, yyyy').format(state.selectedDay!)
+                  : "N/A";
+
               showDialog(
                 context: context,
                 builder: (context) {
                   return DialogWidget(
                     bottomText: Strings.endAppointment,
                     description:
-                        "Your Appointment with Dr. David is confirmed for June 30,2025 at 10:00PM",
+                        "Your Appointment with $doctorName is confirmed for $selectedDate at $selectedTime",
                   );
                 },
               );

@@ -5,12 +5,13 @@ import 'package:docotor_appointment_app/config/router/app_routes.dart';
 import 'package:docotor_appointment_app/config/router/router.dart';
 import 'package:docotor_appointment_app/config/styles/colors.dart';
 import 'package:docotor_appointment_app/config/styles/text.dart';
+import 'package:docotor_appointment_app/controller/doctor_appointment/doctor_appointment_notifier.dart';
 import 'package:docotor_appointment_app/view/widgets/docotor_appointment_book/about_me_section.dart';
 import 'package:docotor_appointment_app/view/widgets/docotor_appointment_book/docotor_experience.dart';
 import 'package:docotor_appointment_app/view/widgets/docotor_appointment_book/reviews_section.dart';
 import 'package:docotor_appointment_app/view/widgets/docotor_appointment_book/working_time.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class DoctorDetailspage extends StatelessWidget {
   const DoctorDetailspage({super.key});
@@ -22,21 +23,21 @@ class DoctorDetailspage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: AppColors.white,
         leading: InkWell(
-          
-          onTap: (){
+          onTap: () {
             router.push(AppRoutesPath.allDocotor);
           },
-          child: Icon(Icons.arrow_back)),
+          child: Icon(Icons.arrow_back),
+        ),
         title: Text(Strings.doctorDetails),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24.0),
             child: InkWell(
-              
-              onTap: (){
+              onTap: () {
                 router.push(AppRoutesPath.favorites);
               },
-              child: Icon(Icons.favorite_outline, color: AppColors.grey800)),
+              child: Icon(Icons.favorite_outline, color: AppColors.grey800),
+            ),
           ),
         ],
       ),
@@ -91,19 +92,28 @@ class DoctorDetailspage extends StatelessWidget {
                 onTap: () {},
               ),
               const SizedBox(height: 16),
-             ReviewsSection(),
+              ReviewsSection(),
             ],
           ),
         ),
       ),
-      bottomSheet: Container(
-         padding: EdgeInsets.all(24),
-          color: AppColors.white,
-        child: CustomElevatedButton(text: Strings.bookAppointment, onPressed: (){
-          router.push(AppRoutesPath.bookAppointMent,
-          
+      bottomSheet: Consumer(
+        builder: (context, ref, _) {
+          return Container(
+            padding: EdgeInsets.all(24),
+            color: AppColors.white,
+            child: CustomElevatedButton(
+              text: Strings.bookAppointment,
+              onPressed: () {
+                
+                    ref.read(doctorAppointmentProvider.notifier)
+                    .setDoctorName("Dr. David Patel");
+
+                router.push(AppRoutesPath.bookAppointMent);
+              },
+            ),
           );
-        }),
+        },
       ),
     );
   }

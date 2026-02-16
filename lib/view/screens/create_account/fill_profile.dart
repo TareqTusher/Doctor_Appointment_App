@@ -80,10 +80,7 @@ class FillProfilePage extends StatelessWidget {
                 SizedBox(height: 20),
                 CommonTextFilled(hintText: 'name@example.com'),
                 SizedBox(height: 20),
-                // CommonTextFilled(
-                //   hintText: 'Date of Birth',
-                //   icon: Icons.calendar_month,
-                // ),
+          
                 CommonTextFilled1(),
                 SizedBox(height: 20),
                 GenderSelectWidget(),

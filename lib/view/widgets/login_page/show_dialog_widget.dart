@@ -65,7 +65,7 @@ final String description;
               ),
               SizedBox(height: 8),
               Text(
-                Strings.yourAccount,
+                description,
                 style: Styles.fontNormal(AppColors.grey500),
               ),
 

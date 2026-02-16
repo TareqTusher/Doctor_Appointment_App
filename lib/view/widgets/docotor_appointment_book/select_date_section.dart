@@ -1,21 +1,17 @@
 import 'package:docotor_appointment_app/config/styles/colors.dart';
+import 'package:docotor_appointment_app/controller/doctor_appointment/doctor_appointment_notifier.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-class SelectDateSection extends StatefulWidget {
+class SelectDateSection extends ConsumerWidget {
   const SelectDateSection({super.key});
 
   @override
-  State<SelectDateSection> createState() => _SelectDateSectionState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final notifier=ref.read(doctorAppointmentProvider.notifier);
+    final state = ref.watch(doctorAppointmentProvider);
 
-class _SelectDateSectionState extends State<SelectDateSection> {
-  DateTime currentTime = DateTime.now();
-  DateTime? _selectedDay;
-
-  String? selectedTime;
-  @override
-  Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -24,16 +20,14 @@ class _SelectDateSectionState extends State<SelectDateSection> {
       ),
       child: TableCalendar(
         rowHeight: 50,
-        headerStyle: HeaderStyle(formatButtonVisible: false),
+        headerStyle: const HeaderStyle(formatButtonVisible: false),
         firstDay: DateTime.utc(1998),
         lastDay: DateTime.utc(2030),
-        focusedDay: currentTime,
-        selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
+        focusedDay: state.focusedDate ?? DateTime.now(),
+        selectedDayPredicate: (day) => isSameDay(state.selectedDay, day),
         onDaySelected: (selectedDay, focusedDay) {
-          setState(() {
-            _selectedDay = selectedDay;
-            currentTime = focusedDay;
-          });
+          notifier.dateSelect(selectedDay, focusedDay);
+            
         },
         calendarStyle: CalendarStyle(
           rangeHighlightColor: AppColors.darkTeal,
