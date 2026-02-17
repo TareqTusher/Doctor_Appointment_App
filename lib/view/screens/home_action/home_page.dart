@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                 hintText: "Search Doctor",
                 icon: Icons.search,
                 color: AppColors.grey100,
-                iconSize: 24,
+                iconSize: 24, onTap: () {  },
               ),
 
               SizedBox(height: 14),

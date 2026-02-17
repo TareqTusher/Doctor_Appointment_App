@@ -37,7 +37,7 @@ class ForgotPassword extends StatelessWidget {
                 SizedBox(height: 32),
                 CommonTextFilled(
                   hintText: Strings.yourEmail,
-                  icon: Icons.email,
+                  icon: Icons.email, onTap: () {  },
                 ),
                 SizedBox(height: 32),
                 CustomElevatedButton(

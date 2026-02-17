@@ -27,12 +27,12 @@ class SetNewPassword extends StatelessWidget {
                   SizedBox(height: 32),
                   CommonTextFilled(
                     hintText: Strings.password,
-                    icon: Icons.lock,
+                    icon: Icons.lock, onTap: () {  },
                   ),
                   SizedBox(height: 20),
                   CommonTextFilled(
                     hintText: Strings.confirmPassword,
-                    icon: Icons.lock,
+                    icon: Icons.lock, onTap: () {  },
                   ),
                 
                 SizedBox(height: 32,),

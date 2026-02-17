@@ -32,17 +32,17 @@ class CreateAccount extends StatelessWidget {
                   SizedBox(height: 32),
                   CommonTextFilled(
                     hintText: Strings.yourName,
-                    icon: Icons.person,
+                    icon: Icons.person, onTap: () {  },
                   ),
                   SizedBox(height: 20),
                   CommonTextFilled(
                     hintText: Strings.yourEmail,
-                    icon: Icons.email,
+                    icon: Icons.email, onTap: () {  },
                   ),
                   SizedBox(height: 20),
                   CommonTextFilled(
                     hintText: Strings.password,
-                    icon: Icons.lock,
+                    icon: Icons.lock, onTap: () {  },
                   ),
                   SizedBox(height: 8),
 

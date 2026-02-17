@@ -1,6 +1,7 @@
 import 'package:docotor_appointment_app/config/const/common_headers.dart';
 import 'package:docotor_appointment_app/config/const/common_text_filled.dart';
 import 'package:docotor_appointment_app/config/const/custom_elevated_button.dart';
+import 'package:docotor_appointment_app/config/const/validator_urls/utility.dart';
 import 'package:docotor_appointment_app/config/router/app_routes.dart';
 import 'package:docotor_appointment_app/config/router/router.dart';
 import 'package:docotor_appointment_app/config/styles/colors.dart';
@@ -16,6 +17,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailTEController=TextEditingController();
+    final TextEditingController passTEController=TextEditingController();
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.white,
@@ -34,12 +37,16 @@ class LoginPage extends StatelessWidget {
 
                   CommonTextFilled(
                     hintText: Strings.yourEmail,
-                    icon: Icons.email,
+                    icon: Icons.email, onTap: () {
+Utility().validateEmail(emailTEController.text.trim());
+
+
+                      },
                   ),
                   SizedBox(height: 20),
                   CommonTextFilled(
                     hintText: Strings.password,
-                    icon: Icons.lock,
+                    icon: Icons.lock, onTap: () {  },
                   ),
                 
                   SizedBox(height: 20),
