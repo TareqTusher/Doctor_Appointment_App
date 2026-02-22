@@ -8,19 +8,23 @@ class CommonTextFilled extends StatelessWidget {
     required this.hintText,
     this.icon,
     this.color = AppColors.grey400,
-    this.iconSize = 18, required this.onTap,
+    this.iconSize = 18, required this.onTap, this.controller,  this.errorText,
   });
   final String hintText;
   final IconData? icon;
   final Color? color;
   final double? iconSize;
   final VoidCallback onTap;
+  final TextEditingController? controller;
+  final String?errorText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller:controller ,
       onTap: onTap,
       decoration: InputDecoration(
+        errorText:errorText ,
         prefixIcon: icon == null
             ? null
             : Icon(icon, size: iconSize!, color: AppColors.grey400),
