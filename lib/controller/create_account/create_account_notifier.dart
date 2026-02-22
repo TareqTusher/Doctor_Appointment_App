@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:docotor_appointment_app/config/const/validator_urls/utility.dart';
 import 'package:docotor_appointment_app/config/router/app_routes.dart';
 import 'package:docotor_appointment_app/config/router/router.dart';
@@ -17,62 +19,37 @@ class CreateAccountNotifier extends StateNotifier<CreateAccountState> {
     if (email.isEmpty) {
       errorText = "Email cannot be empty";
     } else if (!Utility().validateEmail(email)) {
-      errorText = "please Enter valid Email ";
+      errorText = "Please enter a valid email";
     }
-    state = state.copyWith(
-      isLoginProgress: true,
-      emailErrorText: errorText,
-      passErrorText: state.passErrorText,
-    );
+    state = state.copyWith(emailErrorText: errorText);
   }
 
   Future<void> passChecker() async {
     String? errorText;
     final password = passTEController.text.trim();
     if (password.isEmpty) {
-      errorText = 'Password Cannot be Empty';
-    } else if (Utility().validatePassword(password)) {
-      errorText = "Password Should be 8 character";
+      errorText = 'Password cannot be empty';
+    } else if (!Utility().validatePassword(password)) {
+      errorText = "Password should be at least 8 characters";
     }
-    state = state.copyWith(
-      isLoginProgress: true,
-      passErrorText: errorText,
-      emailErrorText: state.emailErrorText,
-    );
+    state = state.copyWith(passErrorText: errorText);
   }
 
+  Future<void> login() async {
+    await emailChecker();
+    await passChecker();
 
-Future<void>login()async{
-
-if(passTEController.text.isNotEmpty&&emailTEController.text.isNotEmpty){
-  router.push(AppRoutesPath.homePage);
-}
-
-}
-  Future<void> validateAndSubmit() async {
-    final email = emailTEController.text.trim();
-    final password = passTEController.text.trim();
-
-    String? emailErr;
-    String? passwordErr;
-
-    if (email.isEmpty) {
-      emailErr = "Email cannot be empty";
-    } else if (!Utility().validateEmail(email)) {
-      emailErr = "Please enter a valid email";
+    if (state.emailErrorText != null || state.passErrorText != null) {
+      state = state.copyWith(isLoginProgress: false);
+      return;
     }
 
-    if (password.isEmpty) {
-      passwordErr = "Password cannot be empty";
-    } else if (!Utility().validatePassword(password)) {
-      passwordErr = "Please Enter Correct Password";
-    }
+    state = state.copyWith(isLoginProgress: true);
 
-    state = state.copyWith(
-      isLoginProgress: false,
-      emailErrorText: emailErr,
-      passErrorText: passwordErr,
-    );
+    Timer(Duration(seconds: 2), () {
+      state = state.copyWith(isLoginProgress: false);
+      router.push(AppRoutesPath.homePage);
+    });
   }
 }
 
