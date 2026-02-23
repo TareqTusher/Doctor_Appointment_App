@@ -21,7 +21,17 @@ class CreateAccountNotifier extends StateNotifier<CreateAccountState> {
     } else if (!Utility().validateEmail(email)) {
       errorText = "Please enter a valid email";
     }
-    state = state.copyWith(emailErrorText: errorText);
+    state = state.copyWith(
+      emailErrorText: errorText,
+      passErrorText: state.passErrorText,
+      isLoginProgress: state.isLoginProgress,
+    );
+
+    // CreateAccountState(
+    //   emailErrorText: errorText,
+    //   passErrorText: state.passErrorText,
+    //   isLoginProgress: state.isLoginProgress,
+    // );
   }
 
   Future<void> passChecker() async {
@@ -32,7 +42,11 @@ class CreateAccountNotifier extends StateNotifier<CreateAccountState> {
     } else if (!Utility().validatePassword(password)) {
       errorText = "Password should be at least 8 characters";
     }
-    state = state.copyWith(passErrorText: errorText);
+     state = state.copyWith(
+      emailErrorText:state.emailErrorText,
+      passErrorText: errorText,
+      isLoginProgress: state.isLoginProgress,
+    );
   }
 
   Future<void> login() async {
@@ -46,7 +60,7 @@ class CreateAccountNotifier extends StateNotifier<CreateAccountState> {
 
     state = state.copyWith(isLoginProgress: true);
 
-    Timer(Duration(seconds: 2), () {
+    Timer(Duration(seconds: 1), () {
       state = state.copyWith(isLoginProgress: false);
       router.push(AppRoutesPath.homePage);
     });

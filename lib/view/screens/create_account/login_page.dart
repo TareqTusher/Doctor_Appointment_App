@@ -55,11 +55,9 @@ class LoginPage extends ConsumerWidget {
                     },
                   ),
                   const SizedBox(height: 20),
-
                   Visibility(
                     visible: state.isLoginProgress == false,
                     replacement: Center(child: CircularProgressIndicator()),
-
                     child: CustomElevatedButton(
                       bottomheight: 12,
                       topHeight: 12,

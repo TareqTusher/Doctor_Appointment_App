@@ -1,6 +1,6 @@
 class CreateAccountState {
   bool? isLoginProgress;
-  final String? emailErrorText, passErrorText;
+   String? emailErrorText, passErrorText;
 
   CreateAccountState({
     this.isLoginProgress = false,
@@ -15,8 +15,8 @@ class CreateAccountState {
   }) {
     return CreateAccountState(
       isLoginProgress: isLoginProgress ?? this.isLoginProgress,
-      emailErrorText: emailErrorText ?? this.emailErrorText,
-      passErrorText: passErrorText ?? this.passErrorText,
+      emailErrorText: emailErrorText,
+      passErrorText: passErrorText ,
     );
   }
 }
