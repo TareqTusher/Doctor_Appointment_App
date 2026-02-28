@@ -33,7 +33,7 @@ class SelectHourSection extends ConsumerWidget {
           final isSelected = selectedTime == time;
 
           return GestureDetector(
-            onTap: () => notifier.selectTime(time), // ✅ Riverpod দিয়ে update
+            onTap: () => notifier.selectTime(time), 
             child: Container(
               height: 42,
               width: 80,

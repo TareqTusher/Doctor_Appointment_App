@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:docotor_appointment_app/config/const/common_calender.dart';
 import 'package:docotor_appointment_app/config/const/common_text_filled.dart';
 import 'package:docotor_appointment_app/config/const/custom_elevated_button.dart';
 import 'package:docotor_appointment_app/config/router/app_routes.dart';
@@ -8,9 +11,24 @@ import 'package:docotor_appointment_app/config/styles/text.dart';
 import 'package:docotor_appointment_app/view/widgets/login_page/gender_select_widget.dart';
 import 'package:docotor_appointment_app/view/widgets/login_page/show_dialog_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
-class FillProfilePage extends StatelessWidget {
+class FillProfilePage extends StatefulWidget {
   const FillProfilePage({super.key});
+
+  @override
+  State<FillProfilePage> createState() => _FillProfilePageState();
+}
+
+class _FillProfilePageState extends State<FillProfilePage> {
+  File? imageFile;
+  Future<void> pickImage(ImageSource source) async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? pickedFile = await picker.pickImage(source: source);
+    setState(() {
+      if (pickedFile != null) imageFile = File(pickedFile.path);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +38,11 @@ class FillProfilePage extends StatelessWidget {
         backgroundColor: AppColors.white,
 
         leading: InkWell(
-          
-          onTap: (){
+          onTap: () {
             router.push(AppRoutesPath.createAccount);
           },
-          child: Icon(Icons.arrow_back, size: 24, color: AppColors.black)),
+          child: Icon(Icons.arrow_back, size: 24, color: AppColors.black),
+        ),
         title: Text(
           Strings.fillProfile,
           style: Styles.largeTextSemiBold(AppColors.grey700),
@@ -41,15 +59,25 @@ class FillProfilePage extends StatelessWidget {
                     Container(
                       height: 170,
                       width: 170,
+                      clipBehavior: Clip.hardEdge,
                       decoration: BoxDecoration(
-                        color: AppColors.grey200.withValues(alpha: 0.45),
                         borderRadius: BorderRadius.circular(100),
+                        color: AppColors.grey200,
+                        image: imageFile != null
+                            ? DecorationImage(
+                                image: FileImage(imageFile!),
+                                fit: BoxFit.fill,
+                                
+                              )
+                            : null,
                       ),
-                      child: Icon(
-                        Icons.person,
-                        color: AppColors.grey300,
-                        size: 160,
-                      ),
+                      child: imageFile == null
+                          ? Icon(
+                              Icons.person,
+                              size: 80,
+                              color: AppColors.grey700,
+                            )
+                          : null,
                     ),
                     Positioned(
                       bottom: 16,
@@ -63,10 +91,15 @@ class FillProfilePage extends StatelessWidget {
                             color: AppColors.darkTeal,
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: Icon(
-                            Icons.edit,
-                            color: AppColors.white,
-                            size: 14,
+                          child: InkWell(
+                            onTap: () {
+                              pickImage(ImageSource.camera);
+                            },
+                            child: Icon(
+                              Icons.edit,
+                              color: AppColors.white,
+                              size: 14,
+                            ),
                           ),
                         ),
                       ),
@@ -74,14 +107,14 @@ class FillProfilePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 24),
-                CommonTextFilled(hintText: 'Md Tariqul Islam', onTap: () {  },),
+                CommonTextFilled(hintText: 'Md Tariqul Islam', onTap: () {}),
                 SizedBox(height: 20),
-                CommonTextFilled(hintText: 'NickName', onTap: () {  },),
+                CommonTextFilled(hintText: 'NickName', onTap: () {}),
                 SizedBox(height: 20),
-                CommonTextFilled(hintText: 'name@example.com', onTap: () {  },),
+                CommonTextFilled(hintText: 'name@example.com', onTap: () {}),
                 SizedBox(height: 20),
-          
-                CommonTextFilled1(),
+
+                CommonCalender(),
                 SizedBox(height: 20),
                 GenderSelectWidget(),
 
@@ -92,7 +125,7 @@ class FillProfilePage extends StatelessWidget {
                     showDialog(
                       context: context,
                       builder: (context) {
-                        return DialogWidget(description: Strings.yourAccount,);
+                        return DialogWidget(description: Strings.yourAccount);
                       },
                     );
                     Future.delayed(const Duration(seconds: 3), () {

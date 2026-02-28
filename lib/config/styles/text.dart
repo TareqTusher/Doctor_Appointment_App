@@ -56,6 +56,7 @@ static const String reviews="Reviews";
     static const String allDoctors = 'All Doctors';
     static const String doctorDetails = 'Doctor Details';
     static const String biodata='Dr. Golden Gate, CA, a dedicated cardiologist, brings a wealth of experience to Golden Gate Cardiology Center in Golden Gate, CA. ';
+    static const String fullBioData="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ";
     static const String bookAppointment = 'Book Appointment';
 static const String selectDate="Select Date";
 static const String selectHour="Select Hour";
@@ -88,5 +89,6 @@ static const String yesLogout="Yes,Logout";
 static const String today="Today";
 static const String markAll="Mark all as read";
 static const String yesterday="Yesterday";
+static const String viewLess=" view Less";
 
 }
