@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:docotor_appointment_app/config/const/validator_urls/utility.dart';
 import 'package:docotor_appointment_app/config/router/app_routes.dart';
@@ -21,7 +22,11 @@ class CreateAccountNotifier extends StateNotifier<CreateAccountState> {
     } else if (!Utility().validateEmail(email)) {
       errorText = "Please enter a valid email";
     }
-    state = state.copyWith(emailErrorText: errorText);
+    state = state.copyWith(
+      emailErrorText: errorText,
+      passErrorText: state.passErrorText,
+      isLoginProgress: state.isLoginProgress,
+    );
   }
 
   Future<void> passChecker() async {
@@ -29,27 +34,42 @@ class CreateAccountNotifier extends StateNotifier<CreateAccountState> {
     final password = passTEController.text.trim();
     if (password.isEmpty) {
       errorText = 'Password cannot be empty';
-    } else if (!Utility().validatePassword(password)) {
+    } else if (Utility().validatePassword(password)) {
       errorText = "Password should be at least 8 characters";
     }
-    state = state.copyWith(passErrorText: errorText);
+    state = state.copyWith(
+      emailErrorText: state.emailErrorText,
+      passErrorText: errorText,
+      isLoginProgress: state.isLoginProgress,
+    );
   }
 
   Future<void> login() async {
+    log("login Button");
     await emailChecker();
     await passChecker();
-
+    log("login Button 2 :: ${state.passErrorText != null}");
     if (state.emailErrorText != null || state.passErrorText != null) {
       state = state.copyWith(isLoginProgress: false);
       return;
     }
-
     state = state.copyWith(isLoginProgress: true);
 
-    Timer(Duration(seconds: 2), () {
-      state = state.copyWith(isLoginProgress: false);
-      router.push(AppRoutesPath.homePage);
-    });
+    await Future.delayed(const Duration(seconds: 3));
+    state = state.copyWith(isLoginProgress: false);
+    router.push(AppRoutesPath.homePage);
+    log("login Button 2");
+  }
+
+  Future<void> pickDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      firstDate: DateTime(1998),
+      lastDate: DateTime(2028),
+    );
+    if (picked != null) {
+      state = state.copyWith(selectedDate: picked);
+    }
   }
 }
 

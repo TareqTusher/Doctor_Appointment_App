@@ -46,30 +46,4 @@ class CommonTextFilled extends StatelessWidget {
   }
 }
 
-class CommonTextFilled1 extends StatelessWidget {
-  const CommonTextFilled1({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 46,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.grey400, width: 1),
-      ),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: InkWell(
-              onTap: (){},
-              child: Image.asset('assets/images/calendar2.png',height: 18,width: 18,)),
-          ),
-          SizedBox(width: 8),
-
-          Text("yg"),
-        ],
-      ),
-    );
-  }
-}
