@@ -49,16 +49,18 @@ class _AllCategorySectionState extends State<AllCategorySection> {
         mainAxisSpacing: 12,
         crossAxisSpacing: 12,
         crossAxisCount: 4,
+        childAspectRatio: 0.8
       ),
       itemBuilder: (context, index) {
         return Column(
+          mainAxisSize: MainAxisSize.max,
           children: [
             Container(
-              height: 80,
-              width:88,
+              height:80,
+              width: 80,
               decoration: BoxDecoration(
                 color: colors[index],
-                borderRadius: BorderRadius.circular(8)
+                borderRadius: BorderRadius.circular(8),
               ),
               child: Center(
                 child: Image.asset(
@@ -69,8 +71,8 @@ class _AllCategorySectionState extends State<AllCategorySection> {
                 ),
               ),
             ),
-                   SizedBox(height: 4),
-                                Text(text[index], style: Styles.fontSmallBold(AppColors.grey600)),
+            SizedBox(height: 4),
+            Text(text[index], style: Styles.fontSmallBold(AppColors.grey600)),
           ],
         );
       },

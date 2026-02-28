@@ -32,17 +32,20 @@ class CreateAccount extends StatelessWidget {
                   SizedBox(height: 32),
                   CommonTextFilled(
                     hintText: Strings.yourName,
-                    icon: Icons.person, onTap: () {  },
+                    icon: Icons.person,
+                    onTap: () {},
                   ),
                   SizedBox(height: 20),
                   CommonTextFilled(
                     hintText: Strings.yourEmail,
-                    icon: Icons.email, onTap: () {  },
+                    icon: Icons.email,
+                    onTap: () {},
                   ),
                   SizedBox(height: 20),
                   CommonTextFilled(
                     hintText: Strings.password,
-                    icon: Icons.lock, onTap: () {  },
+                    icon: Icons.lock,
+                    onTap: () {},
                   ),
                   SizedBox(height: 8),
 
@@ -52,7 +55,6 @@ class CreateAccount extends StatelessWidget {
                     topHeight: 12,
                     text: Strings.createAccount,
                     onPressed: () {
-
                       router.push(AppRoutesPath.fillProfile);
                     },
                   ),
@@ -68,7 +70,7 @@ class CreateAccount extends StatelessWidget {
                     text: Strings.createAccount,
                     buttonText: Strings.signIn,
                     onTap: () {
-                      router.push(AppRoutesPath.loginPage,);
+                      router.push(AppRoutesPath.loginPage);
                     },
                   ),
                 ],

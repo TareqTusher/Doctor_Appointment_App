@@ -28,6 +28,7 @@ class DoctorsSection extends StatelessWidget {
                 name: "Dr. David Patel",
                 favoriteBtn: () {
                   showModalBottomSheet(
+                    backgroundColor: AppColors.white,
                     context: context,
                     isScrollControlled: true,
                     shape: RoundedRectangleBorder(
@@ -47,11 +48,11 @@ class DoctorsSection extends StatelessWidget {
                                 AppColors.darkTeal,
                               ),
                             ),
-
+                        
                             SizedBox(height: 16),
                             Divider(color: AppColors.grey200, height: 1),
                             SizedBox(height: 16),
-
+                        
                             DoctorCard(
                               onTap: () {
                                 router.push(AppRoutesPath.doctorDetails);
@@ -79,7 +80,7 @@ class DoctorsSection extends StatelessWidget {
                 location: "Cardiology Center, USA",
                 rating: 5,
                 reviews: "1,872 Reviews",
-                imageUrl: "assets/images/doc5.png",
+                imageUrl: "assets/images/doc7.png",
                 icons: Icons.star,
               ),
             );
