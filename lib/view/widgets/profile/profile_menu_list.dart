@@ -20,7 +20,7 @@ class ProfileMenuList extends StatelessWidget {
             children: [
               Image.asset(img, height: 24, width: 24),
               SizedBox(width: 8),
-              Text(text, style: Styles.font18Normal(AppColors.grey500)),
+              Text(text, style: Styles.fontText18Normal(AppColors.grey500)),
             ],
           ),
           InkWell(

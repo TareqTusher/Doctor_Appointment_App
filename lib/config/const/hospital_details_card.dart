@@ -66,7 +66,7 @@ class HospitalDetailsCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(clinicName, style: Styles.fontBold(AppColors.grey600)),
+                  Text(clinicName, style: Styles.fontText18Bold(AppColors.grey600)),
                   SizedBox(height: 8),
 
                   Row(
@@ -80,7 +80,7 @@ class HospitalDetailsCard extends StatelessWidget {
                       Expanded(
                         child: Text(
                           address,
-                          style: Styles.fontSmallNormal(AppColors.grey400),
+                          style: Styles.fontText12Normal(AppColors.grey400),
                         ),
                       ),
                     ],
@@ -91,7 +91,7 @@ class HospitalDetailsCard extends StatelessWidget {
                     children: [
                       Text(
                         rating.toStringAsFixed(1),
-                        style: Styles.fontSmallNormal(AppColors.grey400),
+                        style: Styles.fontText12Normal(AppColors.grey400),
                       ),
                       const SizedBox(width: 4),
                       ...List.generate(5, (index) {
@@ -106,7 +106,7 @@ class HospitalDetailsCard extends StatelessWidget {
                       const SizedBox(width: 4),
                       Text(
                         '($reviewCount Reviews)',
-                        style: Styles.fontSmallNormal(AppColors.grey400),
+                        style: Styles.fontText12Normal(AppColors.grey400),
                       ),
                     ],
                   ),
@@ -127,7 +127,7 @@ class HospitalDetailsCard extends StatelessWidget {
                           const SizedBox(width: 4),
                           Text(
                             '$distance/$duration',
-                            style: Styles.fontSmallNormal(AppColors.grey400),
+                            style: Styles.fontText12Normal(AppColors.grey400),
                           ),
                           const SizedBox(width: 16),
 
@@ -142,7 +142,7 @@ class HospitalDetailsCard extends StatelessWidget {
                       const SizedBox(width: 4),
                       Text(
                         facilityType,
-                        style: Styles.fontSmallNormal(AppColors.grey400),
+                        style: Styles.fontText12Normal(AppColors.grey400),
                       ),
                     ],
                   ),

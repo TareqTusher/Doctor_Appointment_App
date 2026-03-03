@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:docotor_appointment_app/config/styles/colors.dart';
 import 'package:docotor_appointment_app/config/styles/styles.dart';
-import 'package:docotor_appointment_app/config/styles/text.dart';
 import 'package:flutter/material.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
@@ -86,13 +85,13 @@ class _DoctorBannersState extends State<DoctorBanners> {
                           children: [
                             Text(
                               i["title"]!,
-                              style: Styles.fontBold(AppColors.white),
+                              style: Styles.fontText16Bold(AppColors.white),
                             ),
                             SizedBox(
                               width: 160,
                               child: Text(
                                 i["desc"]!,
-                                style: Styles.fontSmallNormal(AppColors.white),
+                                style: Styles.fontText12Normal(AppColors.white),
                                 maxLines: 2,
                               ),
                             ),

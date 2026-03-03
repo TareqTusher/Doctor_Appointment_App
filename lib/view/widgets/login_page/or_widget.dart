@@ -12,7 +12,7 @@ class OrWidget extends StatelessWidget {
       children: [
         Expanded(child: Container(height: 1, color: AppColors.grey400)),
         SizedBox(width: 24),
-        Text(Strings.or, style: Styles.font16Medium(AppColors.grey500)),
+        Text(Strings.or, style: Styles.fontText14Medium(AppColors.grey500)),
         SizedBox(width: 24),
         Expanded(child: Container(height: 1, color: AppColors.grey400)),
       ],

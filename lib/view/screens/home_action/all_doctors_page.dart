@@ -28,7 +28,7 @@ class AllDoctorsPage extends StatelessWidget {
         ),
         title: Text(
           Strings.allDoctors,
-          style: Styles.largeTextSemiBold(AppColors.grey700),
+          style: Styles.fontText18SemiBold(AppColors.grey700),
         ),
       ),
       body: SingleChildScrollView(

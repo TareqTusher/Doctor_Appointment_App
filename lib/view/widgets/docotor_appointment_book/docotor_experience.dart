@@ -23,11 +23,11 @@ final String label;
           ),
            Text(
                 value,
-                style:Styles.font16SemiBold(AppColors.grey600),
+                style:Styles.fontText14SemiBold(AppColors.grey600),
               ),
            Text(
                 label,
-                 style:Styles.fontNormal(AppColors.grey500),
+                 style:Styles.fontText12Normal(AppColors.grey500),
               ),
         ],
       );

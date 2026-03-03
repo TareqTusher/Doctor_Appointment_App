@@ -77,7 +77,7 @@ class LoginPage extends ConsumerWidget {
                     },
                     child: Text(
                       Strings.forgotPass,
-                      style: Styles.fontNormal(AppColors.blue),
+                      style: Styles.fontText12Normal(AppColors.blue),
                     ),
                   ),
                   const SizedBox(height: 24),

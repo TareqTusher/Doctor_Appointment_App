@@ -7,7 +7,7 @@ class TodayAppointmentSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        List<String> schedule = [
+    List<String> schedule = [
       "Appointment Success",
       "Appointment Cancelled",
       "Scheduled Changed",
@@ -17,61 +17,55 @@ class TodayAppointmentSection extends StatelessWidget {
       AppColors.lightPink,
       AppColors.grey100,
     ];
-    return          ListView.builder(
-                shrinkWrap: true,
-                itemCount: colors.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 30.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Wrap(
-                          children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                color: colors[index],
-                                shape: BoxShape.circle,
-                              ),
-                              child: Image.asset(
-                                "assets/images/calendar.png",
-                              ),
-                            ),
-                            SizedBox(width: 16),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  schedule[index],
-                                  style: Styles.font16Bold(
-                                    AppColors.darkTeal,
-                                  ),
-                                ),
-                                SizedBox(height: 4),
-                                SizedBox(
-                                  width: 300,
-                                  child: Text(
-                                    "You have successfully booked your appointment with dr. David patel",
-                                    style: Styles.fontNormal(AppColors.grey500),
-                                    overflow: TextOverflow.ellipsis,maxLines: 2,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                    
-                        Text(
-                          "1hr",
-                          style: Styles.fontNormal(AppColors.grey500),
-                        ),
-                      ],
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: colors.length,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 30.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Wrap(
+                children: [
+                  Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      color: colors[index],
+                      shape: BoxShape.circle,
                     ),
-                  );
-                },
-              );
+                    child: Image.asset("assets/images/calendar.png"),
+                  ),
+                  SizedBox(width: 16),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        schedule[index],
+                        style: Styles.fontText14Bold(AppColors.darkTeal),
+                      ),
+                      SizedBox(height: 4),
+                      SizedBox(
+                        width: 300,
+                        child: Text(
+                          "You have successfully booked your appointment with dr. David patel",
+                          style: Styles.fontText12Normal(AppColors.grey500),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+              Text("1hr", style: Styles.fontText12Normal(AppColors.grey500)),
+            ],
+          ),
+        );
+      },
+    );
   }
 }

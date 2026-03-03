@@ -44,14 +44,14 @@ class YesterdayAppointmentSection extends StatelessWidget {
                     children: [
                       Text(
                         "Appointment Success",
-                        style: Styles.font16Bold(AppColors.darkTeal),
+                        style: Styles.fontText14Bold(AppColors.darkTeal),
                       ),
                       SizedBox(height: 4),
                       SizedBox(
                         width: 300,
                         child: Text(
                           "You have successfully booked your appointment with ${schedule[index]}",
-                          style: Styles.fontNormal(AppColors.grey500),
+                          style: Styles.fontText12Normal(AppColors.grey500),
                           overflow: TextOverflow.ellipsis,maxLines: 2,
                         ),
                       ),
@@ -60,7 +60,7 @@ class YesterdayAppointmentSection extends StatelessWidget {
                 ],
               ),
 
-              Text("1hr", style: Styles.fontNormal(AppColors.grey500)),
+              Text("1hr", style: Styles.fontText12Normal(AppColors.grey500)),
             ],
           ),
         );

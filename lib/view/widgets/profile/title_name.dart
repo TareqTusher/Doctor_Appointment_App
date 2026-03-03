@@ -12,8 +12,8 @@ final String title;
   mainAxisAlignment: MainAxisAlignment.spaceBetween,
   children: [
 
-  Text(title,style: Styles.font16Regular(AppColors.grey500),),
-    Text(Strings.markAll,style: Styles.font14Bold(AppColors.darkTeal),),
+  Text(title,style: Styles.fontText14Normal(AppColors.grey500),),
+    Text(Strings.markAll,style: Styles.fontText14Bold(AppColors.darkTeal),),
 
 ],);
   }

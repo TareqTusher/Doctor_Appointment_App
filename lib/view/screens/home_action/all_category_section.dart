@@ -72,7 +72,7 @@ class _AllCategorySectionState extends State<AllCategorySection> {
               ),
             ),
             SizedBox(height: 4),
-            Text(text[index], style: Styles.fontSmallBold(AppColors.grey600)),
+            Text(text[index], style: Styles.fontText12Bold(AppColors.grey600)),
           ],
         );
       },

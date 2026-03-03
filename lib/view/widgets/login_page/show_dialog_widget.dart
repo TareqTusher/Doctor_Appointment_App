@@ -61,12 +61,12 @@ final String description;
               SizedBox(height: 24),
               Text(
                 Strings.congratulation,
-                style: Styles.largeTextSemiBold(AppColors.darkTeal),
+                style: Styles.fontText20SemiBold(AppColors.darkTeal),
               ),
               SizedBox(height: 8),
               Text(
                 description,
-                style: Styles.fontNormal(AppColors.grey500),
+                style: Styles.fontText14Normal(AppColors.grey500),
               ),
 
               SizedBox(height: 32),
@@ -83,7 +83,7 @@ final String description;
                           },
                         ),
                         SizedBox(height: 12),
-                        Text(bottomText ?? "",style: Styles.fontNormal(AppColors.grey500),),
+                        Text(bottomText ?? "",style: Styles.fontText14Normal(AppColors.grey500),),
                       ],
                     ),
             ],

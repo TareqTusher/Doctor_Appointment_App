@@ -9,8 +9,9 @@ class SelectDateSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final notifier=ref.read(doctorAppointmentProvider.notifier);
+    final notifier = ref.read(doctorAppointmentProvider.notifier);
     final state = ref.watch(doctorAppointmentProvider);
+    final today = DateTime.now();
 
     return Container(
       decoration: BoxDecoration(
@@ -21,13 +22,12 @@ class SelectDateSection extends ConsumerWidget {
       child: TableCalendar(
         rowHeight: 50,
         headerStyle: const HeaderStyle(formatButtonVisible: false),
-        firstDay: DateTime.utc(1998),
+        firstDay: DateTime(today.year, today.month, today.day),
         lastDay: DateTime.utc(2030),
         focusedDay: state.focusedDate ?? DateTime.now(),
         selectedDayPredicate: (day) => isSameDay(state.selectedDay, day),
         onDaySelected: (selectedDay, focusedDay) {
           notifier.dateSelect(selectedDay, focusedDay);
-            
         },
         calendarStyle: CalendarStyle(
           rangeHighlightColor: AppColors.darkTeal,

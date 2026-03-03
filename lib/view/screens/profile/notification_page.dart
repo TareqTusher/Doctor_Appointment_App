@@ -35,7 +35,7 @@ class NotificationPage extends StatelessWidget {
               ),
               child: Text(
                 '1 New',
-                style: Styles.smallTextSemiBold(AppColors.white),
+                style: Styles.fontText12SemiBold(AppColors.white),
               ),
             ),
           ),
@@ -43,7 +43,7 @@ class NotificationPage extends StatelessWidget {
         backgroundColor: AppColors.white,
         title: Text(
           Strings.notifications,
-          style: Styles.largeTextSemiBold(AppColors.grey700),
+          style: Styles.fontText18SemiBold(AppColors.grey700),
         ),
       ),
       body: SingleChildScrollView(

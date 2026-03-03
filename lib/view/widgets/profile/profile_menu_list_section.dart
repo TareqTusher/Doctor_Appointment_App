@@ -82,7 +82,7 @@ router.push(AppRoutesPath.notification);
                   children: [
                     Text(
                       Strings.logout,
-                      style: Styles.largeTextSemiBold(AppColors.darkTeal),
+                      style: Styles.fontText18SemiBold(AppColors.darkTeal),
                     ),
                     SizedBox(height: 16),
                     Divider(height: 1, color: AppColors.grey200),
@@ -90,7 +90,7 @@ router.push(AppRoutesPath.notification);
 
                     Text(
                       Strings.wantLogout,
-                      style: Styles.font16SemiBold(AppColors.grey500),
+                      style: Styles.fontText14SemiBold(AppColors.grey500),
                     ),
                     SizedBox(height: 24),
                     CommonRowElevatedButton(
@@ -109,7 +109,7 @@ router.push(AppRoutesPath.notification);
               SizedBox(width: 8),
               Text(
                 Strings.logout,
-                style: Styles.font18Normal(AppColors.grey500),
+                style: Styles.fontText18Normal(AppColors.grey500),
               ),
             ],
           ),

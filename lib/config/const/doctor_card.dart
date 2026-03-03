@@ -70,7 +70,7 @@ final IconData?icons;
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(name, style: Styles.fontBold(AppColors.grey800)),
+                      Text(name, style: Styles.fontText18Bold(AppColors.grey800)),
                       Container(
                         padding: EdgeInsets.all(8),
                         child: InkWell(
@@ -89,7 +89,7 @@ final IconData?icons;
                   SizedBox(height: 8),
                   Text(
                     specialty,
-                    style: Styles.smallTextSemiBold(AppColors.grey600),
+                    style: Styles.fontText14SemiBold(AppColors.grey600),
                   ),
                   SizedBox(height: 4),
                   Row(
@@ -98,7 +98,7 @@ final IconData?icons;
                       SizedBox(width: 4),
                       Text(
                         location,
-                        style: Styles.fontNormal(AppColors.grey600),
+                        style: Styles.fontText14Normal(AppColors.grey600),
                       ),
                     ],
                   ),
@@ -125,7 +125,7 @@ final IconData?icons;
                       SizedBox(width: 4,),
                       Text(
                         reviews??"",
-                       style: Styles.fontNormal(AppColors.grey500),
+                       style: Styles.fontText14Normal(AppColors.grey500),
                       ),
                     ],
                   ),
@@ -163,7 +163,7 @@ final IconData?icons;
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(name, style: Styles.fontBold(AppColors.grey800)),
+                      Text(name, style: Styles.fontText18Bold(AppColors.grey800)),
                      
                     ],
                   ),
@@ -172,7 +172,7 @@ final IconData?icons;
                   SizedBox(height: 8),
                   Text(
                     specialty,
-                    style: Styles.smallTextSemiBold(AppColors.grey600),
+                    style: Styles.fontText14SemiBold(AppColors.grey600),
                   ),
                   SizedBox(height: 4),
                   Row(
@@ -181,7 +181,7 @@ final IconData?icons;
                       SizedBox(width: 4),
                       Text(
                         location,
-                        style: Styles.fontNormal(AppColors.grey600),
+                        style: Styles.fontText14Normal(AppColors.grey600),
                       ),
                     ],
                   ),

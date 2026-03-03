@@ -20,7 +20,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
       children: [
         Text(
           Strings.aboutMe,
-          style: Styles.largeTextSemiBold(AppColors.grey800),
+          style: Styles.fontText18SemiBold(AppColors.grey800),
         ),
         SizedBox(height: 8),
         RichText(
@@ -30,7 +30,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                 text: isExpanded == true
                     ? Strings.fullBioData
                     : Strings.biodata,
-                style: Styles.fontNormal(AppColors.grey500),
+                style: Styles.fontText12Normal(AppColors.grey500),
               ),
               TextSpan(
                 recognizer: TapGestureRecognizer()
@@ -40,7 +40,7 @@ class _AboutMeSectionState extends State<AboutMeSection> {
                     });
                   },
                 text: isExpanded ? Strings.viewLess : Strings.viewMore,
-                style: Styles.font14Bold(
+                style: Styles.fontText12Bold(
                   AppColors.grey900,
                 ).copyWith(decoration: TextDecoration.underline),
               ),

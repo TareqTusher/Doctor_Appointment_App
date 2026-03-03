@@ -44,7 +44,7 @@ class SelectHourSection extends ConsumerWidget {
               ),
               child: Text(
                 time,
-                style: Styles.font16SemiBold(
+                style: Styles.fontText14SemiBold(
                   isSelected ? AppColors.white : AppColors.grey500,
                 ),
               ),

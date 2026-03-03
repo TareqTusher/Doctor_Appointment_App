@@ -35,14 +35,14 @@ class ReviewsSection extends StatelessWidget {
               children: [
                 Text(
                   'Emily Anderson',
-                  style: Styles.fontBold(AppColors.grey700),
+                  style: Styles.fontText16Bold(AppColors.grey700),
                 ),
                 SizedBox(height: 8),
                 Row(
                   children: [
                     Text(
                       '5.0',
-                      style: Styles.fontSmallSemiBold(AppColors.grey500),
+                      style: Styles.fontText12SemiBold(AppColors.grey500),
                     ),
                     const SizedBox(width: 4),
                     ...List.generate(
@@ -59,7 +59,7 @@ class ReviewsSection extends StatelessWidget {
         SizedBox(height: 8),
         Text(
           'Dr. Patel is a true professional who genuinely cares about his patients. I highly recommend Dr. Patel to',
-          style: Styles.fontNormal(AppColors.grey500),
+          style: Styles.fontText12Normal(AppColors.grey500),
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),

@@ -27,7 +27,7 @@ class BookAppointmentPage extends ConsumerWidget {
           centerTitle: true,
           title: Text(
             Strings.bookAppointment,
-            style: Styles.largeTextSemiBold(AppColors.grey700),
+            style: Styles.fontText18SemiBold(AppColors.grey700),
           ),
           leading: InkWell(
             onTap: () => router.push(AppRoutesPath.doctorDetails),

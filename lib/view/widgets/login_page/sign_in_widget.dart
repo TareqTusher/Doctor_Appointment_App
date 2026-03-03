@@ -17,10 +17,10 @@ class ButtonRowWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(text, style: Styles.fontNormal(AppColors.grey500)),
+        Text(text, style: Styles.fontText12Normal(AppColors.grey500)),
         InkWell(
           onTap: onTap,
-          child: Text(buttonText, style: Styles.fontNormal(AppColors.blue)),
+          child: Text(buttonText, style: Styles.fontText12Normal(AppColors.blue)),
         ),
       ],
     );

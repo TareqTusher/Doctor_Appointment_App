@@ -86,11 +86,19 @@ class DoctorsOnline extends ConsumerWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 38.0),
                 child: Column(
                   children: [
-                    CustomElevatedButton(text: "Next", onPressed: () {
-
-
-
-                    }),
+                    CustomElevatedButton(
+                      text: "Next",
+                      onPressed: () {
+                        if (currentIndex < pages.length - 1) {
+                          notifier.pageController.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        } else if (currentIndex == 2) {
+                          router.push(AppRoutesPath.createAccount);
+                        }
+                      },
+                    ),
                     const SizedBox(height: 24),
                     PageViewDotIndicator(
                       currentItem: currentIndex,
@@ -103,11 +111,11 @@ class DoctorsOnline extends ConsumerWidget {
 
                     InkWell(
                       onTap: () {
-                       
+                        router.push(AppRoutesPath.homePage);
                       },
                       child: Text(
                         "Skip",
-                        style: Styles.fontNormal(AppColors.grey500),
+                        style: Styles.fontText12Normal(AppColors.grey500),
                       ),
                     ),
                   ],

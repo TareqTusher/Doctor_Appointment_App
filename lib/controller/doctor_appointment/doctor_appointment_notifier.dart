@@ -3,12 +3,9 @@ import 'package:flutter_riverpod/legacy.dart';
 
 class DoctorAppointmentNotifier extends StateNotifier<DoctorAppointmentState> {
   DoctorAppointmentNotifier() : super(DoctorAppointmentState());
-
+final now=DateTime.now();
   Future<void> dateSelect(DateTime selectDate, DateTime focusdate) async {
-    state = state.copyWith(
-      selectedDay: selectDate,
-      focusedDate: focusdate,
-    );
+    state = state.copyWith(selectedDay: selectDate, focusedDate: focusdate);
   }
 
   void selectTime(String time) {
@@ -21,7 +18,8 @@ class DoctorAppointmentNotifier extends StateNotifier<DoctorAppointmentState> {
 }
 
 final doctorAppointmentProvider =
-    StateNotifierProvider<DoctorAppointmentNotifier, DoctorAppointmentState>(
-        (ref) {
-  return DoctorAppointmentNotifier();
-});
+    StateNotifierProvider<DoctorAppointmentNotifier, DoctorAppointmentState>((
+      ref,
+    ) {
+      return DoctorAppointmentNotifier();
+    });

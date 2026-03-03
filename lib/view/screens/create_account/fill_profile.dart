@@ -45,7 +45,7 @@ class _FillProfilePageState extends State<FillProfilePage> {
         ),
         title: Text(
           Strings.fillProfile,
-          style: Styles.largeTextSemiBold(AppColors.grey700),
+          style: Styles.fontText18SemiBold(AppColors.grey700),
         ),
       ),
       body: SingleChildScrollView(

@@ -15,12 +15,12 @@ class WorkingTimeSection extends StatelessWidget {
       children: [
         Text(
           Strings.workingTime,
-          style: Styles.largeTextSemiBold(AppColors.grey800),
+          style: Styles.fontText18SemiBold(AppColors.grey800),
         ),
         const SizedBox(height: 12),
          Text(
           'Monday-Friday, 08:00 AM-18:00 PM',
-           style: Styles.fontNormal(AppColors.grey500)
+           style: Styles.fontText12Normal(AppColors.grey500)
         ),
       ],
     );

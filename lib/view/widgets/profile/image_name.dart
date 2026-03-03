@@ -17,12 +17,12 @@ class ImageNameSection extends StatelessWidget {
                 SizedBox(height: 16),
                 Text(
                   Strings.yourName,
-                  style: Styles.font16Bold(AppColors.grey800),
+                  style: Styles.fontText16Bold(AppColors.grey800),
                 ),
                 SizedBox(height: 4),
                 Text(
                   "+123 56564534454",
-                  style: Styles.fontNormal(AppColors.grey500),
+                  style: Styles.fontText14Normal(AppColors.grey500),
                 ),
       ],
     );

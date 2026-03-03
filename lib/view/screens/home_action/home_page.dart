@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   Strings.location,
-                  style: Styles.fontNormal(AppColors.grey500),
+                  style: Styles.fontText12Normal(AppColors.grey500),
                 ),
                 SizedBox(height: 8),
                 HeadersSection(),

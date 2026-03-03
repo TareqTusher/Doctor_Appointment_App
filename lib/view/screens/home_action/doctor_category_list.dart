@@ -47,7 +47,7 @@ class _DoctorCategoryListState extends State<DoctorCategoryList> {
                           ),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text(doctorList[index],style: Styles.smallTextSemiBold(selectedIndex==index?AppColors.white: AppColors.darkTeal),),
+                            child: Text(doctorList[index],style: Styles.fontText12SemiBold(selectedIndex==index?AppColors.white: AppColors.darkTeal),),
                           ),
                         ),
                       ),

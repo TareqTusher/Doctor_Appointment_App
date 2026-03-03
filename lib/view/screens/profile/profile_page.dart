@@ -19,7 +19,7 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: AppColors.white,
         title: Text(
           Strings.profile,
-          style: Styles.largeTextSemiBold(AppColors.grey700),
+          style: Styles.fontText18SemiBold(AppColors.grey700),
         ),
       ),
       body: SingleChildScrollView(

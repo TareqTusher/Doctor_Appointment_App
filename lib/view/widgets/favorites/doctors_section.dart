@@ -44,7 +44,7 @@ class DoctorsSection extends StatelessWidget {
                           children: [
                             Text(
                               Strings.removeFavorites,
-                              style: Styles.largeTextSemiBold(
+                              style: Styles.fontText18SemiBold(
                                 AppColors.darkTeal,
                               ),
                             ),
