@@ -18,11 +18,11 @@ final String description;
                       children: [
                         TextSpan(
                           text: "Health",
-                          style: Styles.largeTextRegular(AppColors.grey500),
+                          style: Styles.fontText20Regular(AppColors.grey500),
                         ),
                         TextSpan(
                           text: "Pal",
-                          style: Styles.largeTextRegular(AppColors.grey900),
+                          style: Styles.fontText20Regular(AppColors.grey900),
                         ),
                       ],
                     ),
@@ -30,12 +30,12 @@ final String description;
                      SizedBox(height: 32),
                   Text(
                     title,
-                    style: Styles.largeTextSemiBold(AppColors.darkTeal),
+                    style: Styles.fontText20SemiBold(AppColors.darkTeal),
                   ),
                   SizedBox(height: 8),
                   Text(
                     description,overflow: TextOverflow.ellipsis,textAlign: TextAlign.center,
-                    style: Styles.fontNormal(AppColors.grey500),
+                    style: Styles.fontText14Normal(AppColors.grey500),
                   ),
       ],
     );

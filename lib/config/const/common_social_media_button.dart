@@ -28,7 +28,7 @@ final VoidCallback onTap;
               SizedBox(width: 8,),
               Text(
                 text,
-                style: Styles.fontNormal(AppColors.darkTeal),
+                style: Styles.fontText14Normal(AppColors.darkTeal),
               ),
             ],
           ),

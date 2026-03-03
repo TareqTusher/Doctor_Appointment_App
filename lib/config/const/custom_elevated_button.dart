@@ -20,7 +20,7 @@ double? topHeight;
           color: AppColors.midNightBlue,
           borderRadius: BorderRadius.circular(60)
         ),
-        child: Center(child: Text(text,style: Styles.font16Medium(AppColors.white),)),
+        child: Center(child: Text(text,style: Styles.fontText16Medium(AppColors.white),)),
       ),
     );
   }

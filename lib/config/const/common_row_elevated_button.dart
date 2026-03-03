@@ -23,7 +23,7 @@ class CommonRowElevatedButton extends StatelessWidget {
             onPressed: () => Navigator.pop(context),
             child: Text(
               leftBtnText,
-              style: Styles.font14Bold(AppColors.darkTeal),
+              style: Styles.fontText14Bold(AppColors.darkTeal),
             ),
           ),
         ),
@@ -41,7 +41,7 @@ class CommonRowElevatedButton extends StatelessWidget {
             },
             child: Text(
               rightBtnText,
-              style: Styles.font14Bold(AppColors.white),
+              style: Styles.fontText14Bold(AppColors.white),
             ),
           ),
         ),

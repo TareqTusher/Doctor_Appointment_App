@@ -7,6 +7,6 @@ class CommonTitle extends StatelessWidget {
 final String text;
   @override
   Widget build(BuildContext context) {
-    return Text(text,style: Styles.largeTextSemiBold(AppColors.darkTeal),);
+    return Text(text,style: Styles.fontText20SemiBold(AppColors.darkTeal),);
   }
 }

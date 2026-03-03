@@ -13,10 +13,10 @@ class CommonTitleAndButton extends StatelessWidget {
     return   Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                Text(title,style: Styles.fontBold(AppColors.darkTeal),),
+                Text(title,style: Styles.fontText18Bold(AppColors.darkTeal),),
                 InkWell(
                   onTap: onTap,
-                  child: Text(buttonText,style: Styles.smallTextMedium(AppColors.grey500),))
+                  child: Text(buttonText,style: Styles.fontText14Medium(AppColors.grey500),))
               ],);
   }
 }

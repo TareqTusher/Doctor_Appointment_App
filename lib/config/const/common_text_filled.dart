@@ -29,7 +29,7 @@ class CommonTextFilled extends StatelessWidget {
             ? null
             : Icon(icon, size: iconSize!, color: AppColors.grey400),
         hintText: hintText,
-        hintStyle: Styles.fontNormal(AppColors.grey400),
+        hintStyle: Styles.fontText14Normal(AppColors.grey400),
         fillColor: AppColors.grey50,
         filled: true,
         enabledBorder: OutlineInputBorder(

@@ -12,13 +12,13 @@ final String description;
       children: [
           Text(
                        title,
-                       style: Styles.fontBold(AppColors.grey700),
+                       style: Styles.fontText18Bold(AppColors.grey700),
                      ),
                      const SizedBox(height: 8),
                      Text(
                        description,
                        textAlign: TextAlign.center,
-                       style: Styles.fontNormal(AppColors.grey500),
+                       style: Styles.fontText14Normal(AppColors.grey500),
                      ),
       ],
     );

@@ -31,10 +31,10 @@ class CommonDoctorCardSchedule extends StatelessWidget {
                 children: [
                   Text(
                     date,
-                    style: Styles.fontBold(AppColors.grey800),
+                    style: Styles.fontText18Bold(AppColors.grey800),
                   ),
                   SizedBox(width: 4),
-                  Text(time, style: Styles.fontBold(AppColors.grey800)),
+                  Text(time, style: Styles.fontText18Bold(AppColors.grey800)),
                 ],
               ),
               SizedBox(height: 12),
@@ -58,12 +58,12 @@ class CommonDoctorCardSchedule extends StatelessWidget {
                     children: [
                       Text(
                         drName,
-                        style: Styles.fontBold(AppColors.grey800),
+                        style: Styles.fontText18Bold(AppColors.grey800),
                       ),
                       SizedBox(height: 12),
                       Text(
                         designation,
-                        style: Styles.font16SemiBold(AppColors.grey600),
+                        style: Styles.fontText16SemiBold(AppColors.grey600),
                       ),
 
                       Row(
@@ -79,7 +79,7 @@ class CommonDoctorCardSchedule extends StatelessWidget {
                           SizedBox(width: 4),
                           Text(
                            designation,
-                            style: Styles.fontNormal(AppColors.grey600),
+                            style: Styles.fontText14Normal(AppColors.grey600),
                           ),
                         ],
                       ),
@@ -111,7 +111,7 @@ class CommonDoctorCardSchedule extends StatelessWidget {
                         child: Center(
                           child: Text(
                             leftButtonText,
-                            style: Styles.smallTextSemiBold(AppColors.darkTeal),
+                            style: Styles.fontText14SemiBold(AppColors.darkTeal),
                           ),
                         ),
                       ),
@@ -131,7 +131,7 @@ class CommonDoctorCardSchedule extends StatelessWidget {
                         child: Center(
                           child: Text(
                             rightButtonText,
-                            style: Styles.smallTextSemiBold(AppColors.white),
+                            style: Styles.fontText14SemiBold(AppColors.white),
                           ),
                         ),
                       ),
